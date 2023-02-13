@@ -1,0 +1,348 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0%;
+    font-family: sans-serif;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.navbar{
+    display: grid;
+    grid-template-columns:60xp 1fr;
+    background-color: rgba(26, 23, 23,.2);
+   width: 100%;
+   height: 55px;
+   position: fixed;
+  
+    
+   }
+   span{
+       color: white;
+   }
+   .navbar ul{
+       list-style: none;
+       
+       display: flex;
+      
+   }
+   .navbar li{
+       margin-left: 20px;
+   }
+   .navbar a{
+   
+       color: white;
+       text-decoration: none;
+       font-size: 30px;
+      
+      
+       
+   }
+
+  
+   .navbar li:hover::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    animation-name: barrita;
+    animation-duration: 0.5s;
+
+   }
+
+   @keyframes barrita{
+    from{
+        width: 0%;
+
+    }
+    to{
+        width: 100%;
+    }
+   }
+
+   .container_button{
+   
+       display: block;
+       position: absolute;
+       right:15px;
+       top: 15px;
+       
+   }
+   .container_button button{
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    transition: all .5s;
+    border-radius: 5px;
+   }
+   .container_button button:hover{
+    background-color: white;
+    color: black;
+    border:none;
+   }
+   
+   .menu, #menu_check{
+   display: none;
+   
+   }
+   nav{
+    display: flex;
+    
+    
+   }
+
+
+.video_hero{
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    top: 0;
+   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+.info_hero{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-auto-rows: 800px 50px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.info_hero img{
+    border-radius: 50%;
+    width: 450px;
+    margin-left: 50px;
+
+    
+
+}
+.info_hero h1{
+    font-size: 80px;
+}
+.info_hero h4{
+    font-size: 40px;
+    text-align: center  ;
+}
+
+
+.escritura{
+    display:block;
+    white-space:nowrap;
+    border-right: 4px solid;
+    width: 20ch;
+    animation: escribir 2s steps(19), 
+    blinks .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+
+@keyframes escribir{
+    from{
+        width: 0;
+    }
+}
+@keyframes blinks{
+    50% {border-color: transparent;}
+   
+}
+
+.about{
+   
+    padding-top: 120px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fill,minmax(700px,1fr));
+}
+.about img{
+   
+   border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+   
+}
+.container_foto_about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor_about h1{
+    font-size: 40px;
+    text-align: center;
+    color: rgb(70, 70, 70);
+    
+}
+.contenedor_about h1::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(112, 112, 112);
+}
+
+.contenedor_about p{
+    font-size: 30px;
+    text-align: center;
+    color:rgb(90, 90, 90);
+}
+
+
+.habilidades{
+    margin-top: 150px;
+}
+
+.contendor_habilidades{
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+}
+.habilidades h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+.stats img{
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
+@media only screen and (max-width:1650px){
+    .video_hero{
+        
+        width: 120%;
+        
+        
+     }
+     .about{
+        padding-top: 300px;
+     }
+}
+@media only screen and (max-width:1400px){
+    .video_hero{
+        
+        width: 150%;
+        
+        
+     }
+     .about{
+        padding-top: 100px;
+     }
+}
+@media only screen and (max-width:1150px){
+    .container_button button{
+        display:none;
+     }
+    .video_hero{
+        
+        width: 150%;
+        
+        
+     }
+     .info_hero h1{
+        text-align: center;
+        font-size: 35px;
+        
+    }  
+   
+    .info_hero{
+        grid-auto-rows: 500px 50px;
+    }
+    .about{
+        padding-top: 0;
+     }
+    
+}
+
+
+
+
+
+
+
+
+
+   
+   @media only screen and (max-width:700px){
+     
+   
+       #menu_check:not(:checked) ~ nav{
+           display: none;
+       }
+       #menu_check:checked ~ nav{
+           display: initial;
+       }
+      
+       #menu_cerrar{
+           display: none;
+       }
+       #menu_check:checked ~ label #menu_abrir{
+           display: none;
+           
+       }
+       #menu_check:checked ~ label #menu_cerrar{
+           display: initial;
+           font-size: 30px;
+
+       }
+     
+       nav{
+        justify-content: center;
+        
+        
+       }
+   
+       .menu{
+         
+           display:inline-block;
+           margin-left: 15px;
+           font-size: 40px;
+           cursor: pointer;
+           font-family: sans-serif;
+           justify-content: center;
+       }
+     .navbar{
+       display: flex;
+      
+     }
+     .navbar a{
+        font-size: 20px;
+     }
+    
+   
+     .video_hero{
+        
+        width: 188%;
+        right: initial;
+        top: initial;
+        
+     }
+     .info_hero h1{
+        text-align: center;
+        font-size: 30px;
+        
+        
+    }  
+    .info_hero h4{
+        font-size: 20px;
+    }
+    .info_hero img{
+        width: 30px;
+        margin-left: 0;
+    } 
+    .info_hero{
+        grid-auto-rows: 500px 50px;
+        height: 85vh;
+    }
+   }
